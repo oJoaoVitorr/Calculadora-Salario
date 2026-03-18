@@ -46,11 +46,31 @@ namespace Calculadora_Salario
            desconto = double.Parse(textBox3.Text);
             
             bruto = hora*valorhora;
-            liquido =
+            resdesconto = (desconto / 100) * bruto;
+            liquido = bruto - resdesconto;          
+            label10.Text = bruto.ToString();
+            label7.Text = Math.Round(liquido, 2).ToString();
+            label9.Text = Math.Round(resdesconto, 2).ToString();
 
-            label10.Text = bruto;
 
 
+            
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label10.Text = "";
+            label7.Text = "";
+            label9.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
         }
     }
 }
